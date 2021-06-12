@@ -9,7 +9,6 @@ class CreateRecipes < ActiveRecord::Migration[6.0]
       t.integer :calories
       t.belongs_to :author, references: :users, foreign_key: { to_table: :users}
 
-
       t.timestamps
     end
   end

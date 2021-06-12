@@ -1,9 +1,9 @@
 class CreateLikes < ActiveRecord::Migration[6.0]
   def change
     create_table :likes do |t|
-      t.string :liked
-      t.string :recipe_id
-      t.string :user_id
+      t.boolean :liked
+      t.belongs_to :recipe, foreign_key: true
+      t.belongs_to :user, foreign_key: true
 
       t.timestamps
     end

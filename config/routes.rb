@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :instructions
   resources :ingredients
   resources :likes
   resources :comments

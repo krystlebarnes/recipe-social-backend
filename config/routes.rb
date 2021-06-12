@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :ingredients
   resources :likes
   resources :comments
   namespace :api do

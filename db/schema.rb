@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_12_053517) do
+ActiveRecord::Schema.define(version: 2021_06_22_131016) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "rating"
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 2021_06_12_053517) do
     t.integer "author_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image_url"
     t.index ["author_id"], name: "index_recipes_on_author_id"
   end
 

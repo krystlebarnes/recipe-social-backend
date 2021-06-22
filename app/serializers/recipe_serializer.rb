@@ -1,6 +1,6 @@
 class RecipeSerializer
     include FastJsonapi::ObjectSerializer
-    attributes :name, :description, :prep_time, :cook_time, :serving_size, :calories
+    attributes :name, :image_url, :description, :prep_time, :cook_time, :serving_size, :calories
     
     attribute :ingredients do |recipe|
         recipe.ingredients.map do |ingredient|

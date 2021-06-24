@@ -6,4 +6,8 @@ class User < ApplicationRecord
     has_many :likes
     has_many :recipes, :through => :comments
     has_many :recipes, :through => :likes
+
+    validates :name, :username, :presence => {:message => "can't be blank"}
+    validates :username, :uniqueness => {:message => "is already in use" }
+  
 end

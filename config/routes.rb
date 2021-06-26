@@ -6,9 +6,10 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :users
-      resources :recipes
-      resources :instructions
-      resources :ingredients
+      resources :recipes do
+        resources :ingredients
+        resources :instructions
+      end
       resources :likes
       resources :comments
     end

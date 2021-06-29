@@ -19,10 +19,11 @@ class Api::V1::RecipesController < ApplicationController
     end
 
     def create
+        
         @recipe = current_user.recipes.build(recipe_params)
         
         if @recipe.save
-          render json RecipeSerializer.new(@recipe), status: :created
+          render json: RecipeSerializer.new(@recipe), status: :created
         else
           error_resp = {
           error: @recipe.error.full_messages.to_sentence
@@ -60,7 +61,7 @@ class Api::V1::RecipesController < ApplicationController
     end
 
     def recipe_params
-        params.require(:recipe).permit(:name, :description, :prep_time, :cook_time, :serving_size, :calories, :author_id, ingredients_attributes: [:_destroy, :id, :quantity, :unit, :item_name, :notes], instructions_attributes: [:_destroy, :id, :step])
+        params.require(:recipe).permit(:name, :image_url, :description, :prep_time, :cook_time, :serving_size, :calories, :author_id, ingredients_attributes: [:_destroy, :id, :quantity, :unit, :item_name, :notes], instructions_attributes: [:_destroy, :id, :step])
     end
 
 

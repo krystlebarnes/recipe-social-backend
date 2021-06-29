@@ -4,6 +4,6 @@ class Recipe < ApplicationRecord
     has_many :likes
     has_many :ingredients
     has_many :instructions
-    has_many :users, :through => :comments
-    has_many :users, :through => :likes
+    # has_many :users, :through => :comments
+    # has_many :users, :through => :likes
 end
